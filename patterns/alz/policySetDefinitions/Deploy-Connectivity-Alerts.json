@@ -2681,6 +2681,22 @@
           "description": "Alert state for the alert"
         }
       },
+      "activityPolicyAssignmentsWriteAlertState": {
+        "type": "string",
+        "defaultValue": "true",
+        "metadata": {
+          "displayName": "Activity Policy Assignments Write Alert State",
+          "description": "Alert state for the alert"
+        }
+      },
+      "activityPolicyAssignmentsDeleteAlertState": {
+        "type": "string",
+        "defaultValue": "true",
+        "metadata": {
+          "displayName": "Activity Policy Assignments Delete Alert State",
+          "description": "Alert state for the alert"
+        }
+      },
       "activityUDRUpdateAlertState": {
         "type": "string",
         "defaultValue": "true",
