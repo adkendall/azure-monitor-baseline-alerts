@@ -70,7 +70,7 @@
         "allOf": [
           {
             "field": "type",
-            "equals": "Microsoft.Network/networkSecurityGroups"
+            "equals": "Microsoft.Sql/servers/firewallRules"
           },
           {
             "field": "[[concat('tags[', parameters('MonitorDisable'), ']')]",
