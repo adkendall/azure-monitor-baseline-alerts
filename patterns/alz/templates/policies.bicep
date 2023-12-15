@@ -168,6 +168,7 @@ var loadPolicyDefinitions = {
 
     loadTextContent('../../../services/Network/networkSecurityGroups/Deploy-ActivityLog-NSG-Write.json')
     loadTextContent('../../../services/Sql/servers/Deploy-ActivityLog-SQLServer-firewall-Write.json')
+    loadTextContent('../../../services/Sql/servers/Deploy-ActivityLog-SQLServer-firewall-Delete.json')
   ]
   AzureCloud: []
   AzureChinaCloud: []
