@@ -167,6 +167,7 @@ var loadPolicyDefinitions = {
     loadTextContent('../../../services/Web/serverFarms/Deploy-WSF-MemoryPercentage-Alert.json')
 
     loadTextContent('../../../services/Network/networkSecurityGroups/Deploy-ActivityLog-NSG-Write.json')
+    loadTextContent('../../../services/Sql/servers/Deploy-ActivityLog-SQLServer-firewall-Write.json')
   ]
   AzureCloud: []
   AzureChinaCloud: []

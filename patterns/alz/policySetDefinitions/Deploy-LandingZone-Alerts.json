@@ -830,6 +830,14 @@
           "description": "Alert state for the alert"
         }
       },
+      "activitySQLFirewallWriteAlertState": {
+        "type": "string",
+        "defaultValue": "true",
+        "metadata": {
+          "displayName": "Activity NSG Write Alert State",
+          "description": "Alert state for the alert"
+        }
+      },
       "activityUDRUpdateAlertState": {
         "type": "string",
         "defaultValue": "true",
@@ -4370,6 +4378,24 @@
         "parameters": {
           "enabled": {
             "value": "[[parameters('activityNSGWriteAlertState')]"
+          },
+          "alertResourceGroupName": {
+            "value": "[[parameters('ALZMonitorResourceGroupName')]"
+          },
+          "alertResourceGroupTags": {
+            "value": "[[parameters('ALZMonitorResourceGroupTags')]"
+          },
+          "alertResourceGroupLocation": {
+            "value": "[[parameters('ALZMonitorResourceGroupLocation')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "ALZ_activitySQLFirewallWrite",
+        "policyDefinitionId": "[concat('/providers/Microsoft.Management/managementGroups/contoso', '/providers/Microsoft.Authorization/policyDefinitions/Deploy_activitylog_SQL_Firewall_Write')]",
+        "parameters": {
+          "enabled": {
+            "value": "[[parameters('activitySQLFirewallWriteAlertState')]"
           },
           "alertResourceGroupName": {
             "value": "[[parameters('ALZMonitorResourceGroupName')]"
