@@ -5,7 +5,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.16.1.55165",
-      "templateHash": "10531668884429420427"
+      "templateHash": "12992330605158177631"
     }
   },
   "parameters": {
@@ -2774,7 +2774,15 @@
             "type": "string",
             "defaultValue": "true",
             "metadata": {
-              "displayName": "Activity NSG Write Alert State",
+              "displayName": "AActivity SQL Firewall Rule Write Alert State",
+              "description": "Alert state for the alert"
+            }
+          },
+          "activitySQLFirewallDeleteAlertState": {
+            "type": "string",
+            "defaultValue": "true",
+            "metadata": {
+              "displayName": "Activity SQL Firewall Rule Delete Alert State",
               "description": "Alert state for the alert"
             }
           },
