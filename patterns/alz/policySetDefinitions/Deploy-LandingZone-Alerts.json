@@ -830,6 +830,22 @@
           "description": "Alert state for the alert"
         }
       },
+      "activityNSGsecurityRulesDeleteAlertState": {
+        "type": "string",
+        "defaultValue": "true",
+        "metadata": {
+          "displayName": "Activity NSG SecurityRules Delete Alert State",
+          "description": "Alert state for the alert"
+        }
+      },
+      "activityNSGsecurityRulesWriteAlertState": {
+        "type": "string",
+        "defaultValue": "true",
+        "metadata": {
+          "displayName": "Activity NSG SecurityRules Write Alert State",
+          "description": "Alert state for the alert"
+        }
+      },
       "activitySQLFirewallWriteAlertState": {
         "type": "string",
         "defaultValue": "true",
@@ -4386,6 +4402,42 @@
         "parameters": {
           "enabled": {
             "value": "[[parameters('activityNSGWriteAlertState')]"
+          },
+          "alertResourceGroupName": {
+            "value": "[[parameters('ALZMonitorResourceGroupName')]"
+          },
+          "alertResourceGroupTags": {
+            "value": "[[parameters('ALZMonitorResourceGroupTags')]"
+          },
+          "alertResourceGroupLocation": {
+            "value": "[[parameters('ALZMonitorResourceGroupLocation')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "ALZ_activityNSGsecurityRulesDelete",
+        "policyDefinitionId": "[concat('/providers/Microsoft.Management/managementGroups/contoso', '/providers/Microsoft.Authorization/policyDefinitions/Deploy_activitylog_NSGsecurityRules_Delete')]",
+        "parameters": {
+          "enabled": {
+            "value": "[[parameters('activityNSGsecurityRulesDeleteAlertState')]"
+          },
+          "alertResourceGroupName": {
+            "value": "[[parameters('ALZMonitorResourceGroupName')]"
+          },
+          "alertResourceGroupTags": {
+            "value": "[[parameters('ALZMonitorResourceGroupTags')]"
+          },
+          "alertResourceGroupLocation": {
+            "value": "[[parameters('ALZMonitorResourceGroupLocation')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "ALZ_activityNSGsecurityRulesWrite",
+        "policyDefinitionId": "[concat('/providers/Microsoft.Management/managementGroups/contoso', '/providers/Microsoft.Authorization/policyDefinitions/Deploy_activitylog_NSGsecurityRules_Write')]",
+        "parameters": {
+          "enabled": {
+            "value": "[[parameters('activityNSGsecurityRulesWriteAlertState')]"
           },
           "alertResourceGroupName": {
             "value": "[[parameters('ALZMonitorResourceGroupName')]"

@@ -2649,6 +2649,22 @@
           "description": "Alert state for the alert"
         }
       },
+      "activityNSGsecurityRulesDeleteAlertState": {
+        "type": "string",
+        "defaultValue": "true",
+        "metadata": {
+          "displayName": "Activity NSG SecurityRules Delete Alert State",
+          "description": "Alert state for the alert"
+        }
+      },
+      "activityNSGsecurityRulesWriteAlertState": {
+        "type": "string",
+        "defaultValue": "true",
+        "metadata": {
+          "displayName": "Activity NSG SecurityRules Write Alert State",
+          "description": "Alert state for the alert"
+        }
+      },
       "activitySQLFirewallWriteAlertState": {
         "type": "string",
         "defaultValue": "true",
