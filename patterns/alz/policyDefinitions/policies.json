@@ -5,7 +5,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.16.1.55165",
-      "templateHash": "6208874380350235109"
+      "templateHash": "1662804149052218033"
     }
   },
   "parameters": {
@@ -2758,6 +2758,22 @@
             "defaultValue": "true",
             "metadata": {
               "displayName": "Activity NSG Delete Alert State",
+              "description": "Alert state for the alert"
+            }
+          },
+          "activityNSGWriteAlertState": {
+            "type": "string",
+            "defaultValue": "true",
+            "metadata": {
+              "displayName": "Activity NSG Write Alert State",
+              "description": "Alert state for the alert"
+            }
+          },
+          "activitySQLFirewallWriteAlertState": {
+            "type": "string",
+            "defaultValue": "true",
+            "metadata": {
+              "displayName": "Activity NSG Write Alert State",
               "description": "Alert state for the alert"
             }
           },

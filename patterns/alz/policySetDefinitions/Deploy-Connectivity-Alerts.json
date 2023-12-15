@@ -2641,6 +2641,22 @@
           "description": "Alert state for the alert"
         }
       },
+      "activityNSGWriteAlertState": {
+        "type": "string",
+        "defaultValue": "true",
+        "metadata": {
+          "displayName": "Activity NSG Write Alert State",
+          "description": "Alert state for the alert"
+        }
+      },
+      "activitySQLFirewallWriteAlertState": {
+        "type": "string",
+        "defaultValue": "true",
+        "metadata": {
+          "displayName": "Activity NSG Write Alert State",
+          "description": "Alert state for the alert"
+        }
+      },
       "activityUDRUpdateAlertState": {
         "type": "string",
         "defaultValue": "true",
