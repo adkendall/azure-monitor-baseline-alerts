@@ -1,7 +1,7 @@
 {
   "type": "Microsoft.Authorization/policyDefinitions",
   "apiVersion": "2021-06-01",
-  "name": "Deploy_activitylog_SQL_Server_Firewall_Write",
+  "name": "Deploy_activitylog_SQLServer_Firewall_Write",
   "properties": {
     "policyType": "Custom",
     "mode": "All",
