@@ -822,6 +822,14 @@
           "description": "Alert state for the alert"
         }
       },
+      "activityNSGWriteAlertState": {
+        "type": "string",
+        "defaultValue": "true",
+        "metadata": {
+          "displayName": "Activity NSG Write Alert State",
+          "description": "Alert state for the alert"
+        }
+      },
       "activityUDRUpdateAlertState": {
         "type": "string",
         "defaultValue": "true",
@@ -4357,6 +4365,24 @@
         }
       },
       {
+        "policyDefinitionReferenceId": "ALZ_activityNSGWrite",
+        "policyDefinitionId": "[concat('/providers/Microsoft.Management/managementGroups/contoso', '/providers/Microsoft.Authorization/policyDefinitions/Deploy_activitylog_NSG_Write')]",
+        "parameters": {
+          "enabled": {
+            "value": "[[parameters('activityNSGWriteAlertState')]"
+          },
+          "alertResourceGroupName": {
+            "value": "[[parameters('ALZMonitorResourceGroupName')]"
+          },
+          "alertResourceGroupTags": {
+            "value": "[[parameters('ALZMonitorResourceGroupTags')]"
+          },
+          "alertResourceGroupLocation": {
+            "value": "[[parameters('ALZMonitorResourceGroupLocation')]"
+          }
+        }
+      },
+      {
         "policyDefinitionReferenceId": "ALZ_activityUDRUpdate",
         "policyDefinitionId": "[concat('/providers/Microsoft.Management/managementGroups/contoso', '/providers/Microsoft.Authorization/policyDefinitions/Deploy_activitylog_RouteTable_Update')]",
         "parameters": {
@@ -5489,7 +5515,7 @@
             "value": "[[parameters('FDBackendHealthAlertState')]"
           }
         }
-      },      
+      },
       {
         "policyDefinitionReferenceId": "ALZ_FDBackendRequestLatency",
         "policyDefinitionId": "[concat('/providers/Microsoft.Management/managementGroups/contoso', '/providers/Microsoft.Authorization/policyDefinitions/Deploy_FD_BackendRequestLatency_Alert')]",
