@@ -5,7 +5,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.16.1.55165",
-      "templateHash": "5455549409584381955"
+      "templateHash": "6208874380350235109"
     }
   },
   "parameters": {
@@ -9043,7 +9043,7 @@
           },
           {
             "policyDefinitionReferenceId": "ALZ_activitySQLFirewallWrite",
-            "policyDefinitionId": "[[concat('/providers/Microsoft.Management/managementGroups/contoso', '/providers/Microsoft.Authorization/policyDefinitions/Deploy_activitylog_SQL_Firewall_Write')]",
+            "policyDefinitionId": "[[concat('/providers/Microsoft.Management/managementGroups/contoso', '/providers/Microsoft.Authorization/policyDefinitions/Deploy_activitylog_SQLServer_Firewall_Write')]",
             "parameters": {
               "enabled": {
                 "value": "[[[parameters('activitySQLFirewallWriteAlertState')]"
