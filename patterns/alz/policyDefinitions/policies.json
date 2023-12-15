@@ -5,7 +5,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.22.6.54827",
-      "templateHash": "10055228997983083839"
+      "templateHash": "17634466138463054262"
     }
   },
   "parameters": {
@@ -940,6 +940,14 @@
             "defaultValue": "true",
             "metadata": {
               "displayName": "Activity NSG Delete Alert State",
+              "description": "Alert state for the alert"
+            }
+          },
+          "activityNSGWriteAlertState": {
+            "type": "string",
+            "defaultValue": "true",
+            "metadata": {
+              "displayName": "Activity NSG Write Alert State",
               "description": "Alert state for the alert"
             }
           },
@@ -4465,6 +4473,24 @@
             "parameters": {
               "enabled": {
                 "value": "[[[parameters('activityNSGDeleteAlertState')]"
+              },
+              "alertResourceGroupName": {
+                "value": "[[[parameters('ALZMonitorResourceGroupName')]"
+              },
+              "alertResourceGroupTags": {
+                "value": "[[[parameters('ALZMonitorResourceGroupTags')]"
+              },
+              "alertResourceGroupLocation": {
+                "value": "[[[parameters('ALZMonitorResourceGroupLocation')]"
+              }
+            }
+          },
+          {
+            "policyDefinitionReferenceId": "ALZ_activityNSGWrite",
+            "policyDefinitionId": "[[concat('/providers/Microsoft.Management/managementGroups/contoso', '/providers/Microsoft.Authorization/policyDefinitions/Deploy_activitylog_NSG_Write')]",
+            "parameters": {
+              "enabled": {
+                "value": "[[[parameters('activityNSGWriteAlertState')]"
               },
               "alertResourceGroupName": {
                 "value": "[[[parameters('ALZMonitorResourceGroupName')]"
