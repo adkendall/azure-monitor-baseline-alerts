@@ -285,7 +285,7 @@
           "displayName": "Activity Policy Assignments Delete Alert State",
           "description": "Alert state for the alert"
         }
-      },
+      }
     },
     "policyDefinitions": [
       {
@@ -524,7 +524,7 @@
             "value": "[[parameters('ALZMonitorResourceGroupLocation')]"
           }
         }
-      },
+      }
     ],
     "policyType": "Custom",
     "policyDefinitionGroups": null
