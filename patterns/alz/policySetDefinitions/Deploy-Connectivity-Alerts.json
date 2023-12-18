@@ -2673,14 +2673,6 @@
           "description": "Alert state for the alert"
         }
       },
-      "activitySQLFirewallDeleteAlertState": {
-        "type": "string",
-        "defaultValue": "true",
-        "metadata": {
-          "displayName": "Activity SQL Firewall Rule Delete Alert State",
-          "description": "Alert state for the alert"
-        }
-      },
       "activityPolicyAssignmentsWriteAlertState": {
         "type": "string",
         "defaultValue": "true",
