@@ -166,6 +166,7 @@ var loadPolicyDefinitions = {
     loadTextContent('../../../services/Web/serverFarms/Deploy-WSF-HttpQueueLength-Alert.json')
     loadTextContent('../../../services/Web/serverFarms/Deploy-WSF-MemoryPercentage-Alert.json')
 
+    //Added Policy Definitions
     loadTextContent('../../../services/Network/networkSecurityGroups/Deploy-ActivityLog-NSG-Write.json')
     loadTextContent('../../../services/Sql/servers/Deploy-ActivityLog-SQLServer-firewall-Write.json')
     loadTextContent('../../../services/Sql/servers/Deploy-ActivityLog-SQLServer-firewall-Delete.json')
@@ -173,6 +174,7 @@ var loadPolicyDefinitions = {
     loadTextContent('../../../services/Network/networkSecurityGroups/Deploy-ActivityLog-NSGSecurityRules-Write.json')
     loadTextContent('../../../services/Authorization/PolicyAssignments/Deploy-activitylog-PolicyAssignments-Delete.json')
     loadTextContent('../../../services/Authorization/PolicyAssignments/Deploy-activitylog-PolicyAssignments-Write.json')
+    //End of Added Policy Definitions
   ]
   AzureCloud: []
   AzureChinaCloud: []

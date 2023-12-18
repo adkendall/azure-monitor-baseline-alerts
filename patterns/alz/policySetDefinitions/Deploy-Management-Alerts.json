@@ -15,6 +15,71 @@
       "_deployed_by_amba": true
     },
     "parameters": {
+      "activityNSGDeleteAlertState": {
+        "type": "string",
+        "defaultValue": "true",
+        "metadata": {
+          "displayName": "Activity NSG Delete Alert State",
+          "description": "Alert state for the alert"
+        }
+      },
+      "activityNSGWriteAlertState": {
+        "type": "string",
+        "defaultValue": "true",
+        "metadata": {
+          "displayName": "Activity NSG Write Alert State",
+          "description": "Alert state for the alert"
+        }
+      },
+      "activityNSGsecurityRulesDeleteAlertState": {
+        "type": "string",
+        "defaultValue": "true",
+        "metadata": {
+          "displayName": "Activity NSG SecurityRules Delete Alert State",
+          "description": "Alert state for the alert"
+        }
+      },
+      "activityNSGsecurityRulesWriteAlertState": {
+        "type": "string",
+        "defaultValue": "true",
+        "metadata": {
+          "displayName": "Activity NSG SecurityRules Write Alert State",
+          "description": "Alert state for the alert"
+        }
+      },
+      "activitySQLFirewallWriteAlertState": {
+        "type": "string",
+        "defaultValue": "true",
+        "metadata": {
+          "displayName": "Activity SQL Firewall Rule Write Alert State",
+          "description": "Alert state for the alert"
+        }
+      },
+      "activitySQLFirewallDeleteAlertState": {
+        "type": "string",
+        "defaultValue": "true",
+        "metadata": {
+          "displayName": "Activity SQL Firewall Rule Delete Alert State",
+          "description": "Alert state for the alert"
+        }
+      },
+      "activityPolicyAssignmentsWriteAlertState": {
+        "type": "string",
+        "defaultValue": "true",
+        "metadata": {
+          "displayName": "Activity Policy Assignments Write Alert State",
+          "description": "Alert state for the alert"
+        }
+      },
+      "activityPolicyAssignmentsDeleteAlertState": {
+        "type": "string",
+        "defaultValue": "true",
+        "metadata": {
+          "displayName": "Activity Policy Assignments Delete Alert State",
+          "description": "Alert state for the alert"
+        }
+      },
+
       "ALZMonitorResourceGroupName": {
         "type": "String",
         "defaultValue": "ALZ-Monitoring-RG",
@@ -221,70 +286,6 @@
           "displayName": "Activity Log Alert Key Regen Alert State",
           "description": "Alert state for the alert"
         }
-      },
-      "activityNSGDeleteAlertState": {
-        "type": "string",
-        "defaultValue": "true",
-        "metadata": {
-          "displayName": "Activity NSG Delete Alert State",
-          "description": "Alert state for the alert"
-        }
-      },
-      "activityNSGWriteAlertState": {
-        "type": "string",
-        "defaultValue": "true",
-        "metadata": {
-          "displayName": "Activity NSG Write Alert State",
-          "description": "Alert state for the alert"
-        }
-      },
-      "activityNSGsecurityRulesDeleteAlertState": {
-        "type": "string",
-        "defaultValue": "true",
-        "metadata": {
-          "displayName": "Activity NSG SecurityRules Delete Alert State",
-          "description": "Alert state for the alert"
-        }
-      },
-      "activityNSGsecurityRulesWriteAlertState": {
-        "type": "string",
-        "defaultValue": "true",
-        "metadata": {
-          "displayName": "Activity NSG SecurityRules Write Alert State",
-          "description": "Alert state for the alert"
-        }
-      },
-      "activitySQLFirewallWriteAlertState": {
-        "type": "string",
-        "defaultValue": "true",
-        "metadata": {
-          "displayName": "Activity SQL Firewall Rule Write Alert State",
-          "description": "Alert state for the alert"
-        }
-      },
-      "activitySQLFirewallDeleteAlertState": {
-        "type": "string",
-        "defaultValue": "true",
-        "metadata": {
-          "displayName": "Activity SQL Firewall Rule Delete Alert State",
-          "description": "Alert state for the alert"
-        }
-      },
-      "activityPolicyAssignmentsWriteAlertState": {
-        "type": "string",
-        "defaultValue": "true",
-        "metadata": {
-          "displayName": "Activity Policy Assignments Write Alert State",
-          "description": "Alert state for the alert"
-        }
-      },
-      "activityPolicyAssignmentsDeleteAlertState": {
-        "type": "string",
-        "defaultValue": "true",
-        "metadata": {
-          "displayName": "Activity Policy Assignments Delete Alert State",
-          "description": "Alert state for the alert"
-        }
       }
     },
     "policyDefinitions": [
@@ -381,6 +382,8 @@
           }
         }
       },
+
+
       {
         "policyDefinitionReferenceId": "ALZ_activityNSGDelete",
         "policyDefinitionId": "[concat('/providers/Microsoft.Management/managementGroups/contoso', '/providers/Microsoft.Authorization/policyDefinitions/Deploy_activitylog_NSG_Delete')]",
