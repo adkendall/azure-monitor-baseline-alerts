@@ -2641,54 +2641,6 @@
           "description": "Alert state for the alert"
         }
       },
-      "activityNSGWriteAlertState": {
-        "type": "string",
-        "defaultValue": "true",
-        "metadata": {
-          "displayName": "Activity NSG Write Alert State",
-          "description": "Alert state for the alert"
-        }
-      },
-      "activityNSGsecurityRulesDeleteAlertState": {
-        "type": "string",
-        "defaultValue": "true",
-        "metadata": {
-          "displayName": "Activity NSG SecurityRules Delete Alert State",
-          "description": "Alert state for the alert"
-        }
-      },
-      "activityNSGsecurityRulesWriteAlertState": {
-        "type": "string",
-        "defaultValue": "true",
-        "metadata": {
-          "displayName": "Activity NSG SecurityRules Write Alert State",
-          "description": "Alert state for the alert"
-        }
-      },
-      "activitySQLFirewallWriteAlertState": {
-        "type": "string",
-        "defaultValue": "true",
-        "metadata": {
-          "displayName": "AActivity SQL Firewall Rule Write Alert State",
-          "description": "Alert state for the alert"
-        }
-      },
-      "activityPolicyAssignmentsWriteAlertState": {
-        "type": "string",
-        "defaultValue": "true",
-        "metadata": {
-          "displayName": "Activity Policy Assignments Write Alert State",
-          "description": "Alert state for the alert"
-        }
-      },
-      "activityPolicyAssignmentsDeleteAlertState": {
-        "type": "string",
-        "defaultValue": "true",
-        "metadata": {
-          "displayName": "Activity Policy Assignments Delete Alert State",
-          "description": "Alert state for the alert"
-        }
-      },
       "activityUDRUpdateAlertState": {
         "type": "string",
         "defaultValue": "true",
