@@ -55,22 +55,7 @@
           "description": "Alert state for the alert"
         }
       },
-      "activityPolicyAssignmentsWriteAlertState": {
-        "type": "string",
-        "defaultValue": "true",
-        "metadata": {
-          "displayName": "Activity Policy Assignments Write Alert State",
-          "description": "Alert state for the alert"
-        }
-      },
-      "activityPolicyAssignmentsDeleteAlertState": {
-        "type": "string",
-        "defaultValue": "true",
-        "metadata": {
-          "displayName": "Activity Policy Assignments Delete Alert State",
-          "description": "Alert state for the alert"
-        }
-      },
+
 
 
       "ALZMonitorResourceGroupName": {
@@ -5547,7 +5532,7 @@
             "value": "[[parameters('FDBackendHealthAlertState')]"
           }
         }
-      },      
+      },
       {
         "policyDefinitionReferenceId": "ALZ_FDBackendRequestLatency",
         "policyDefinitionId": "[concat('/providers/Microsoft.Management/managementGroups/contoso', '/providers/Microsoft.Authorization/policyDefinitions/Deploy_FD_BackendRequestLatency_Alert')]",
@@ -5649,42 +5634,6 @@
         "parameters": {
           "enabled": {
             "value": "[[parameters('activitySQLFirewallDeleteAlertState')]"
-          },
-          "alertResourceGroupName": {
-            "value": "[[parameters('ALZMonitorResourceGroupName')]"
-          },
-          "alertResourceGroupTags": {
-            "value": "[[parameters('ALZMonitorResourceGroupTags')]"
-          },
-          "alertResourceGroupLocation": {
-            "value": "[[parameters('ALZMonitorResourceGroupLocation')]"
-          }
-        }
-      },
-      {
-        "policyDefinitionReferenceId": "ALZ_activityPolicyAssignmentsWrite",
-        "policyDefinitionId": "[concat('/providers/Microsoft.Management/managementGroups/contoso', '/providers/Microsoft.Authorization/policyDefinitions/Deploy_activitylog_PolicyAssignments_Write')]",
-        "parameters": {
-          "enabled": {
-            "value": "[[parameters('activityPolicyAssignmentsWriteAlertState')]"
-          },
-          "alertResourceGroupName": {
-            "value": "[[parameters('ALZMonitorResourceGroupName')]"
-          },
-          "alertResourceGroupTags": {
-            "value": "[[parameters('ALZMonitorResourceGroupTags')]"
-          },
-          "alertResourceGroupLocation": {
-            "value": "[[parameters('ALZMonitorResourceGroupLocation')]"
-          }
-        }
-      },
-      {
-        "policyDefinitionReferenceId": "ALZ_activityPolicyAssignmentsDelete",
-        "policyDefinitionId": "[concat('/providers/Microsoft.Management/managementGroups/contoso', '/providers/Microsoft.Authorization/policyDefinitions/Deploy_activitylog_PolicyAssignments_Delete')]",
-        "parameters": {
-          "enabled": {
-            "value": "[[parameters('activityPolicyAssignmentsDeleteAlertState')]"
           },
           "alertResourceGroupName": {
             "value": "[[parameters('ALZMonitorResourceGroupName')]"

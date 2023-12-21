@@ -164,7 +164,7 @@
                   {
                     "type": "Microsoft.Resources/deployments",
                     "apiVersion": "2019-10-01",
-                    "name": "ActivityNSGDelete",
+                    "name": "ActivityNSGsecurityRulesDelete",
                     "resourceGroup": "[[parameters('alertResourceGroupName')]",
                     "dependsOn": [
                       "[[concat('Microsoft.Resources/resourceGroups/', parameters('alertResourceGroupName'))]"

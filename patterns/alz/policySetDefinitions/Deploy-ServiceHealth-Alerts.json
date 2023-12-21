@@ -15,6 +15,22 @@
       "_deployed_by_amba": true
     },
     "parameters": {
+      "activityPolicyAssignmentsWriteAlertState": {
+        "type": "string",
+        "defaultValue": "true",
+        "metadata": {
+          "displayName": "Activity Policy Assignments Write Alert State",
+          "description": "Alert state for the alert"
+        }
+      },
+      "activityPolicyAssignmentsDeleteAlertState": {
+        "type": "string",
+        "defaultValue": "true",
+        "metadata": {
+          "displayName": "Activity Policy Assignments Delete Alert State",
+          "description": "Alert state for the alert"
+        }
+      },
       "ALZMonitorResourceGroupName": {
         "type": "String",
         "defaultValue": "ALZ-Monitoring-RG",
@@ -294,6 +310,42 @@
           },
           "MonitorDisable": {
             "value": "[[parameters('MonitorDisable')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "ALZ_activityPolicyAssignmentsWrite",
+        "policyDefinitionId": "[concat('/providers/Microsoft.Management/managementGroups/contoso', '/providers/Microsoft.Authorization/policyDefinitions/Deploy_activitylog_PolicyAssignments_Write')]",
+        "parameters": {
+          "enabled": {
+            "value": "[[parameters('activityPolicyAssignmentsWriteAlertState')]"
+          },
+          "alertResourceGroupName": {
+            "value": "[[parameters('ALZMonitorResourceGroupName')]"
+          },
+          "alertResourceGroupTags": {
+            "value": "[[parameters('ALZMonitorResourceGroupTags')]"
+          },
+          "alertResourceGroupLocation": {
+            "value": "[[parameters('ALZMonitorResourceGroupLocation')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "ALZ_activityPolicyAssignmentsDelete",
+        "policyDefinitionId": "[concat('/providers/Microsoft.Management/managementGroups/contoso', '/providers/Microsoft.Authorization/policyDefinitions/Deploy_activitylog_PolicyAssignments_Delete')]",
+        "parameters": {
+          "enabled": {
+            "value": "[[parameters('activityPolicyAssignmentsDeleteAlertState')]"
+          },
+          "alertResourceGroupName": {
+            "value": "[[parameters('ALZMonitorResourceGroupName')]"
+          },
+          "alertResourceGroupTags": {
+            "value": "[[parameters('ALZMonitorResourceGroupTags')]"
+          },
+          "alertResourceGroupLocation": {
+            "value": "[[parameters('ALZMonitorResourceGroupLocation')]"
           }
         }
       }

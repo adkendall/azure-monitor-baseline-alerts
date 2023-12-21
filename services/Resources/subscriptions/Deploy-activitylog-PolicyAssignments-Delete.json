@@ -1,12 +1,12 @@
 {
   "type": "Microsoft.Authorization/policyDefinitions",
   "apiVersion": "2021-06-01",
-  "name": "Deploy_activitylog_PolicyAssignments_Write",
+  "name": "Deploy_activitylog_PolicyAssignments_Delete",
   "properties": {
     "policyType": "Custom",
     "mode": "All",
-    "displayName": "Deploy Activity Log PolicyAssignments Write",
-    "description": "Policy to Deploy Activity Log PolicyAssignments Write",
+    "displayName": "Deploy Activity Log PolicyAssignments Delete",
+    "description": "Policy to Deploy Activity Log PolicyAssignments Delete",
     "metadata": {
       "version": "1.0.2",
       "category": "Network",
@@ -70,7 +70,7 @@
         "allOf": [
           {
             "field": "type",
-            "equals": "Microsoft.Authorization/policyAssignments"
+            "equals": "Microsoft.Resources/subscriptions"
           },
           {
             "field": "[[concat('tags[', parameters('MonitorDisable'), ']')]",
@@ -85,7 +85,7 @@
             "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
           ],
           "type": "Microsoft.Insights/activityLogAlerts",
-          "name": "ActivityPolicyAssignmentsWrite",
+          "name": "ActivityPolicyAssignmentsDelete",
           "existenceScope": "resourcegroup",
           "resourceGroupName": "[[parameters('alertResourceGroupName')]",
           "deploymentScope": "subscription",
@@ -120,7 +120,7 @@
                           },
                           {
                             "field": "microsoft.insights/activityLogAlerts/condition.allOf[*].equals",
-                            "equals": "Microsoft.Authorization/policyAssignments/write"
+                            "equals": "Microsoft.Authorization/policyAssignments/delete"
                           }
                         ]
                       }
@@ -164,7 +164,7 @@
                   {
                     "type": "Microsoft.Resources/deployments",
                     "apiVersion": "2019-10-01",
-                    "name": "ActivityPolicyAssignmentsWrite",
+                    "name": "ActivityPolicyAssignmentsDelete",
                     "resourceGroup": "[[parameters('alertResourceGroupName')]",
                     "dependsOn": [
                       "[[concat('Microsoft.Resources/resourceGroups/', parameters('alertResourceGroupName'))]"
@@ -187,13 +187,13 @@
                           {
                             "type": "microsoft.insights/activityLogAlerts",
                             "apiVersion": "2020-10-01",
-                            "name": "ActivityPolicyAssignmentsWrite",
+                            "name": "ActivityPolicyAssignmentsDelete",
                             "location": "global",
                             "tags": {
                               "_deployed_by_amba": true
                             },
                             "properties": {
-                              "description": "Activity Policy Assignments Write",
+                              "description": "Activity Policy Assignments Delete",
                               "enabled": "[[parameters('enabled')]",
                               "scopes": [
                                 "[[subscription().id]"
@@ -206,7 +206,7 @@
                                   },
                                   {
                                     "field": "operationName",
-                                    "equals": "Microsoft.Authorization/policyAssignments/write"
+                                    "equals": "Microsoft.Authorization/policyAssignments/delete"
                                   },
                                   {
                                     "field": "status",

@@ -172,8 +172,8 @@ var loadPolicyDefinitions = {
     loadTextContent('../../../services/Sql/servers/Deploy-ActivityLog-SQLServer-firewall-Delete.json')
     loadTextContent('../../../services/Network/networkSecurityGroups/Deploy-ActivityLog-NSGSecurityRules-Del.json')
     loadTextContent('../../../services/Network/networkSecurityGroups/Deploy-ActivityLog-NSGSecurityRules-Write.json')
-    loadTextContent('../../../services/Authorization/PolicyAssignments/Deploy-activitylog-PolicyAssignments-Delete.json')
-    loadTextContent('../../../services/Authorization/PolicyAssignments/Deploy-activitylog-PolicyAssignments-Write.json')
+    loadTextContent('../../../services/Resources/subscriptions/Deploy-activitylog-PolicyAssignments-Delete.json')
+    loadTextContent('../../../services/Resources/subscriptions/Deploy-activitylog-PolicyAssignments-Write.json')
     //End of Added Policy Definitions
   ]
   AzureCloud: []
