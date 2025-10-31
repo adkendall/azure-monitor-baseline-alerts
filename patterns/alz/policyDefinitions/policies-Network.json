@@ -4,8 +4,8 @@
   "metadata": {
     "_generator": {
       "name": "bicep",
-      "version": "0.34.44.8038",
-      "templateHash": "12402263687288366818"
+      "version": "0.38.33.27573",
+      "templateHash": "15204391117684398245"
     }
   },
   "parameters": {
@@ -209,6 +209,46 @@
           "_deployed_by_amba": true
         },
         "parameters": {
+          "activityNSGWriteAlertState": {
+            "type": "string",
+            "defaultValue": "true",
+            "metadata": {
+              "displayName": "Activity NSG Write Alert State",
+              "description": "Alert state for the alert"
+            }
+          },
+          "activityNSGsecurityRulesDeleteAlertState": {
+            "type": "string",
+            "defaultValue": "true",
+            "metadata": {
+              "displayName": "Activity NSG SecurityRules Delete Alert State",
+              "description": "Alert state for the alert"
+            }
+          },
+          "activityNSGsecurityRulesWriteAlertState": {
+            "type": "string",
+            "defaultValue": "true",
+            "metadata": {
+              "displayName": "Activity NSG SecurityRules Write Alert State",
+              "description": "Alert state for the alert"
+            }
+          },
+          "activitySQLFirewallWriteAlertState": {
+            "type": "string",
+            "defaultValue": "true",
+            "metadata": {
+              "displayName": "Activity SQL Firewall Rule Write Alert State",
+              "description": "Alert state for the alert"
+            }
+          },
+          "activitySQLFirewallDeleteAlertState": {
+            "type": "string",
+            "defaultValue": "true",
+            "metadata": {
+              "displayName": "Activity SQL Firewall Rule Delete Alert State",
+              "description": "Alert state for the alert"
+            }
+          },
           "ALZMonitorResourceGroupName": {
             "type": "String",
             "defaultValue": "rg-amba-monitoring-001",
@@ -3874,6 +3914,96 @@
           }
         },
         "policyDefinitions": [
+          {
+            "policyDefinitionReferenceId": "ALZ_activityNSGWrite",
+            "policyDefinitionId": "[[concat('/providers/Microsoft.Management/managementGroups/contoso', '/providers/Microsoft.Authorization/policyDefinitions/Deploy_activitylog_NSG_Write')]",
+            "parameters": {
+              "enabled": {
+                "value": "[[[parameters('activityNSGWriteAlertState')]"
+              },
+              "alertResourceGroupName": {
+                "value": "[[[parameters('ALZMonitorResourceGroupName')]"
+              },
+              "alertResourceGroupTags": {
+                "value": "[[[parameters('ALZMonitorResourceGroupTags')]"
+              },
+              "alertResourceGroupLocation": {
+                "value": "[[[parameters('ALZMonitorResourceGroupLocation')]"
+              }
+            }
+          },
+          {
+            "policyDefinitionReferenceId": "ALZ_activityNSGsecurityRulesDelete",
+            "policyDefinitionId": "[[concat('/providers/Microsoft.Management/managementGroups/contoso', '/providers/Microsoft.Authorization/policyDefinitions/Deploy_activitylog_NSGsecurityRules_Delete')]",
+            "parameters": {
+              "enabled": {
+                "value": "[[[parameters('activityNSGsecurityRulesDeleteAlertState')]"
+              },
+              "alertResourceGroupName": {
+                "value": "[[[parameters('ALZMonitorResourceGroupName')]"
+              },
+              "alertResourceGroupTags": {
+                "value": "[[[parameters('ALZMonitorResourceGroupTags')]"
+              },
+              "alertResourceGroupLocation": {
+                "value": "[[[parameters('ALZMonitorResourceGroupLocation')]"
+              }
+            }
+          },
+          {
+            "policyDefinitionReferenceId": "ALZ_activityNSGsecurityRulesWrite",
+            "policyDefinitionId": "[[concat('/providers/Microsoft.Management/managementGroups/contoso', '/providers/Microsoft.Authorization/policyDefinitions/Deploy_activitylog_NSGsecurityRules_Write')]",
+            "parameters": {
+              "enabled": {
+                "value": "[[[parameters('activityNSGsecurityRulesWriteAlertState')]"
+              },
+              "alertResourceGroupName": {
+                "value": "[[[parameters('ALZMonitorResourceGroupName')]"
+              },
+              "alertResourceGroupTags": {
+                "value": "[[[parameters('ALZMonitorResourceGroupTags')]"
+              },
+              "alertResourceGroupLocation": {
+                "value": "[[[parameters('ALZMonitorResourceGroupLocation')]"
+              }
+            }
+          },
+          {
+            "policyDefinitionReferenceId": "ALZ_activitySQLFirewallWrite",
+            "policyDefinitionId": "[[concat('/providers/Microsoft.Management/managementGroups/contoso', '/providers/Microsoft.Authorization/policyDefinitions/Deploy_activitylog_SQLServer_Firewall_Write')]",
+            "parameters": {
+              "enabled": {
+                "value": "[[[parameters('activitySQLFirewallWriteAlertState')]"
+              },
+              "alertResourceGroupName": {
+                "value": "[[[parameters('ALZMonitorResourceGroupName')]"
+              },
+              "alertResourceGroupTags": {
+                "value": "[[[parameters('ALZMonitorResourceGroupTags')]"
+              },
+              "alertResourceGroupLocation": {
+                "value": "[[[parameters('ALZMonitorResourceGroupLocation')]"
+              }
+            }
+          },
+          {
+            "policyDefinitionReferenceId": "ALZ_activitySQLFirewallDelete",
+            "policyDefinitionId": "[[concat('/providers/Microsoft.Management/managementGroups/contoso', '/providers/Microsoft.Authorization/policyDefinitions/Deploy_activitylog_SQLServer_Firewall_Delete')]",
+            "parameters": {
+              "enabled": {
+                "value": "[[[parameters('activitySQLFirewallDeleteAlertState')]"
+              },
+              "alertResourceGroupName": {
+                "value": "[[[parameters('ALZMonitorResourceGroupName')]"
+              },
+              "alertResourceGroupTags": {
+                "value": "[[[parameters('ALZMonitorResourceGroupTags')]"
+              },
+              "alertResourceGroupLocation": {
+                "value": "[[[parameters('ALZMonitorResourceGroupLocation')]"
+              }
+            }
+          },
           {
             "policyDefinitionReferenceId": "ALZ_ERCIRQoSDropBitsinPerSec",
             "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy_ERCIR_QosDropBitsInPerSecond_Alert",
@@ -9345,6 +9475,46 @@
           "_deployed_by_amba": true
         },
         "parameters": {
+          "activityNSGWriteAlertState": {
+            "type": "string",
+            "defaultValue": "true",
+            "metadata": {
+              "displayName": "Activity NSG Write Alert State",
+              "description": "Alert state for the alert"
+            }
+          },
+          "activityNSGsecurityRulesDeleteAlertState": {
+            "type": "string",
+            "defaultValue": "true",
+            "metadata": {
+              "displayName": "Activity NSG SecurityRules Delete Alert State",
+              "description": "Alert state for the alert"
+            }
+          },
+          "activityNSGsecurityRulesWriteAlertState": {
+            "type": "string",
+            "defaultValue": "true",
+            "metadata": {
+              "displayName": "Activity NSG SecurityRules Write Alert State",
+              "description": "Alert state for the alert"
+            }
+          },
+          "activitySQLFirewallWriteAlertState": {
+            "type": "string",
+            "defaultValue": "true",
+            "metadata": {
+              "displayName": "Activity SQL Firewall Rule Write Alert State",
+              "description": "Alert state for the alert"
+            }
+          },
+          "activitySQLFirewallDeleteAlertState": {
+            "type": "string",
+            "defaultValue": "true",
+            "metadata": {
+              "displayName": "Activity SQL Firewall Rule Delete Alert State",
+              "description": "Alert state for the alert"
+            }
+          },
           "ALZMonitorResourceGroupName": {
             "type": "String",
             "defaultValue": "rg-amba-monitoring-001",
@@ -9474,6 +9644,96 @@
           }
         },
         "policyDefinitions": [
+          {
+            "policyDefinitionReferenceId": "ALZ_activityNSGWrite",
+            "policyDefinitionId": "[[concat('/providers/Microsoft.Management/managementGroups/contoso', '/providers/Microsoft.Authorization/policyDefinitions/Deploy_activitylog_NSG_Write')]",
+            "parameters": {
+              "enabled": {
+                "value": "[[[parameters('activityNSGWriteAlertState')]"
+              },
+              "alertResourceGroupName": {
+                "value": "[[[parameters('ALZMonitorResourceGroupName')]"
+              },
+              "alertResourceGroupTags": {
+                "value": "[[[parameters('ALZMonitorResourceGroupTags')]"
+              },
+              "alertResourceGroupLocation": {
+                "value": "[[[parameters('ALZMonitorResourceGroupLocation')]"
+              }
+            }
+          },
+          {
+            "policyDefinitionReferenceId": "ALZ_activityNSGsecurityRulesDelete",
+            "policyDefinitionId": "[[concat('/providers/Microsoft.Management/managementGroups/contoso', '/providers/Microsoft.Authorization/policyDefinitions/Deploy_activitylog_NSGsecurityRules_Delete')]",
+            "parameters": {
+              "enabled": {
+                "value": "[[[parameters('activityNSGsecurityRulesDeleteAlertState')]"
+              },
+              "alertResourceGroupName": {
+                "value": "[[[parameters('ALZMonitorResourceGroupName')]"
+              },
+              "alertResourceGroupTags": {
+                "value": "[[[parameters('ALZMonitorResourceGroupTags')]"
+              },
+              "alertResourceGroupLocation": {
+                "value": "[[[parameters('ALZMonitorResourceGroupLocation')]"
+              }
+            }
+          },
+          {
+            "policyDefinitionReferenceId": "ALZ_activityNSGsecurityRulesWrite",
+            "policyDefinitionId": "[[concat('/providers/Microsoft.Management/managementGroups/contoso', '/providers/Microsoft.Authorization/policyDefinitions/Deploy_activitylog_NSGsecurityRules_Write')]",
+            "parameters": {
+              "enabled": {
+                "value": "[[[parameters('activityNSGsecurityRulesWriteAlertState')]"
+              },
+              "alertResourceGroupName": {
+                "value": "[[[parameters('ALZMonitorResourceGroupName')]"
+              },
+              "alertResourceGroupTags": {
+                "value": "[[[parameters('ALZMonitorResourceGroupTags')]"
+              },
+              "alertResourceGroupLocation": {
+                "value": "[[[parameters('ALZMonitorResourceGroupLocation')]"
+              }
+            }
+          },
+          {
+            "policyDefinitionReferenceId": "ALZ_activitySQLFirewallWrite",
+            "policyDefinitionId": "[[concat('/providers/Microsoft.Management/managementGroups/contoso', '/providers/Microsoft.Authorization/policyDefinitions/Deploy_activitylog_SQLServer_Firewall_Write')]",
+            "parameters": {
+              "enabled": {
+                "value": "[[[parameters('activitySQLFirewallWriteAlertState')]"
+              },
+              "alertResourceGroupName": {
+                "value": "[[[parameters('ALZMonitorResourceGroupName')]"
+              },
+              "alertResourceGroupTags": {
+                "value": "[[[parameters('ALZMonitorResourceGroupTags')]"
+              },
+              "alertResourceGroupLocation": {
+                "value": "[[[parameters('ALZMonitorResourceGroupLocation')]"
+              }
+            }
+          },
+          {
+            "policyDefinitionReferenceId": "ALZ_activitySQLFirewallDelete",
+            "policyDefinitionId": "[[concat('/providers/Microsoft.Management/managementGroups/contoso', '/providers/Microsoft.Authorization/policyDefinitions/Deploy_activitylog_SQLServer_Firewall_Delete')]",
+            "parameters": {
+              "enabled": {
+                "value": "[[[parameters('activitySQLFirewallDeleteAlertState')]"
+              },
+              "alertResourceGroupName": {
+                "value": "[[[parameters('ALZMonitorResourceGroupName')]"
+              },
+              "alertResourceGroupTags": {
+                "value": "[[[parameters('ALZMonitorResourceGroupTags')]"
+              },
+              "alertResourceGroupLocation": {
+                "value": "[[[parameters('ALZMonitorResourceGroupLocation')]"
+              }
+            }
+          },
           {
             "policyDefinitionReferenceId": "ALZ_activityNSGDelete",
             "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy_activitylog_NSG_Delete",
