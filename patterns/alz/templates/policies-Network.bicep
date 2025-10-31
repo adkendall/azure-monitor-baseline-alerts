@@ -150,6 +150,14 @@ var loadPolicyDefinitions = {
     loadTextContent('../../../services/Network/routeTables/Deploy-ActivityLog-RouteTable-Delete.json')
     loadTextContent('../../../services/Network/routeTables/Deploy-ActivityLog-RouteTable-Routes-Delete.json')
     loadTextContent('../../../services/Network/networkSecurityGroups/Deploy-ActivityLog-NSG-Del.json')
+
+    //Added Policy Definitions
+    loadTextContent('../../../services/Network/networkSecurityGroups/Deploy-ActivityLog-NSG-Write.json')
+    loadTextContent('../../../services/Sql/servers/Deploy-ActivityLog-SQLServer-firewall-Write.json')
+    loadTextContent('../../../services/Sql/servers/Deploy-ActivityLog-SQLServer-firewall-Delete.json')
+    loadTextContent('../../../services/Network/networkSecurityGroups/Deploy-ActivityLog-NSGSecurityRules-Del.json')
+    loadTextContent('../../../services/Network/networkSecurityGroups/Deploy-ActivityLog-NSGSecurityRules-Write.json')
+
   ]
   AzureCloud: []
   AzureChinaCloud: []

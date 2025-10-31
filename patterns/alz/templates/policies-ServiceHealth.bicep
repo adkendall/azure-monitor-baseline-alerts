@@ -74,6 +74,10 @@ var loadPolicyDefinitions = {
     loadTextContent('../../../services/Resources/subscriptions/Deploy-ActivityLog-ServiceHealth-Incident.json')
     loadTextContent('../../../services/Resources/subscriptions/Deploy-ActivityLog-ServiceHealth-Maintenance.json')
     loadTextContent('../../../services/Resources/subscriptions/Deploy-ActivityLog-ServiceHealth-Security.json')
+
+    //added policy defs
+    loadTextContent('../../../services/Resources/subscriptions/Deploy-activitylog-PolicyAssignments-Delete.json')
+    loadTextContent('../../../services/Resources/subscriptions/Deploy-activitylog-PolicyAssignments-Write.json')
   ]
   AzureCloud: []
   AzureChinaCloud: []
