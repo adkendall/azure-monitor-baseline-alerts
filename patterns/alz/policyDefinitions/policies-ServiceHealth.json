@@ -5,7 +5,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.38.33.27573",
-      "templateHash": "12810573641442622675"
+      "templateHash": "11885051077606689366"
     }
   },
   "parameters": {
@@ -658,6 +658,22 @@
           "_deployed_by_amba": true
         },
         "parameters": {
+          "activityPolicyAssignmentsWriteAlertState": {
+            "type": "string",
+            "defaultValue": "true",
+            "metadata": {
+              "displayName": "Activity Policy Assignments Write Alert State",
+              "description": "Alert state for the alert"
+            }
+          },
+          "activityPolicyAssignmentsDeleteAlertState": {
+            "type": "string",
+            "defaultValue": "true",
+            "metadata": {
+              "displayName": "Activity Policy Assignments Delete Alert State",
+              "description": "Alert state for the alert"
+            }
+          },
           "ALZMonitorResourceGroupName": {
             "type": "String",
             "defaultValue": "rg-amba-monitoring-001",
@@ -815,6 +831,42 @@
           }
         },
         "policyDefinitions": [
+          {
+            "policyDefinitionReferenceId": "ALZ_activityPolicyAssignmentsWrite",
+            "policyDefinitionId": "[[concat('/providers/Microsoft.Management/managementGroups/contoso', '/providers/Microsoft.Authorization/policyDefinitions/Deploy_activitylog_PolicyAssignments_Write')]",
+            "parameters": {
+              "enabled": {
+                "value": "[[[parameters('activityPolicyAssignmentsWriteAlertState')]"
+              },
+              "alertResourceGroupName": {
+                "value": "[[[parameters('ALZMonitorResourceGroupName')]"
+              },
+              "alertResourceGroupTags": {
+                "value": "[[[parameters('ALZMonitorResourceGroupTags')]"
+              },
+              "alertResourceGroupLocation": {
+                "value": "[[[parameters('ALZMonitorResourceGroupLocation')]"
+              }
+            }
+          },
+          {
+            "policyDefinitionReferenceId": "ALZ_activityPolicyAssignmentsDelete",
+            "policyDefinitionId": "[[concat('/providers/Microsoft.Management/managementGroups/contoso', '/providers/Microsoft.Authorization/policyDefinitions/Deploy_activitylog_PolicyAssignments_Delete')]",
+            "parameters": {
+              "enabled": {
+                "value": "[[[parameters('activityPolicyAssignmentsDeleteAlertState')]"
+              },
+              "alertResourceGroupName": {
+                "value": "[[[parameters('ALZMonitorResourceGroupName')]"
+              },
+              "alertResourceGroupTags": {
+                "value": "[[[parameters('ALZMonitorResourceGroupTags')]"
+              },
+              "alertResourceGroupLocation": {
+                "value": "[[[parameters('ALZMonitorResourceGroupLocation')]"
+              }
+            }
+          },
           {
             "policyDefinitionReferenceId": "ALZ_ResHlthUnhealthy",
             "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy_activitylog_ResourceHealth_Unhealthy_Alert",
